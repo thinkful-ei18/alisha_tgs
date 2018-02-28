@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './TGS.css';
-// import AdvanceButton from './components/AdvanceButton';
 import LandingPage from './components/LandingPage';
 import QuestionOne from './components/QuestionOne';
 import GoNow from './components/GoNow';
