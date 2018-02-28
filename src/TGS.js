@@ -1,66 +1,42 @@
 import React, { Component } from 'react';
 import './TGS.css';
 
+const COMPONENTS = {
+  one: LandingPage,
+  two: QuestionOne,
+  three: GoNow,
+  four: QuestionTwo,
+  five: GoodAnswer,
+  six: BadAnswer
+};
 
 export default class TGS extends Component {
 
   constructor() {
     super();
-
     this.state= {
-      clicked: false,
-      yesButtonClick: false,
-      noButtonClick: false
+      currentKey: 'one'
     }
-
-    this.yesButton = this.yesButton.bind(this);
-    this.noButton = this.noButton.bind(this);
-  }
-
-
-
-  startButton(e) {
-    this.setState({clicked: true})
-  }
-
-  yesButton(e) {
-    this.setState({ yesButtonClick: true })
-  }
-
-  noButton(e) {
-    this.setState({ noButtonClick: true })
   }
 
   render() {
-
-    if (!this.state.clicked) {
-      return (
-        <div className="TGS">
-          <h1>The Greatest Showman</h1>
-          <h4>Starring: Hugh Jackman, Michelle Williams, Zac Efron & Zendaya</h4>
-          <button onClick={ e => this.startButton(e) }>Start</button>
-        </div>
-      );
-    }
-
-    return <QuestionOne />
+    const Component=COMPONENTS[this.state.currentKey]
+    return <Component />
   }
 }
 
-class QuestionOne extends Component {
+function LandingPage() {
+  return (
+    <div className="TGS">
+      <h1>The Greatest Showman</h1>
+      <h4>Starring: Hugh Jackman, Michelle Williams, Zac Efron & Zendaya</h4>
+      <button onClick={e => this.startButton(e)}>Start</button>
+    </div>
+  );
+}
 
-  constructor() {
-    super();
-    this.yesButton = this.yesButton.bind(this);
-    this.noButton = this.noButton.bind(this);
-  }
+function QuestionOne() {
 
-  render() {
-    if (this.state.yesButtonClick) {
-      return <QuestionTwo />
-    } else if (this.state.noButtonClick) {
-      return <GoNow />
-    }
     return (
       <div className="QuestionOne">
         <h1>Have you seen it?</h1>
@@ -69,24 +45,6 @@ class QuestionOne extends Component {
       </div>
     )
   }
-
-
-//   if(this.state.yesButtonClick===undefined) {
-//     return (
-//       <div className="QuestionOne">
-//         <h1>Have you seen it?</h1>
-//         <YesButton />
-//         <NoButton />
-//       </div>
-//       )
-//   } else if(this.state.yesButtonClick) {
-//     return <QuestionTwo />
-//   } else if (this.state.noButtonClick) {
-//     return <GoNow />
-//   } 
-// }
-
-}
 
 function YesButton() {
 
@@ -110,7 +68,7 @@ function QuestionTwo() {
 
   return (
     <div className="QuestionTwo">
-      <h1>Did you like it></h1>
+      <h1>Did you like it?</h1>
       <YesButton />
       <NoButton />
     </div>
@@ -122,6 +80,24 @@ function GoNow() {
   return (
     <div className="GoNow">
       <h1>Stop what you're doing and go buy a ticket!</h1>
+    </div>
+  )
+}
+
+function GoodAnswer() {
+
+  return (
+    <div className="GoodAnswer">
+      <h1>Let's be friends!!</h1>
+    </div>
+  )
+}
+
+function BadAnswer() {
+
+  return (
+    <div className="BadAnswer">
+      <h1>Booooo!!</h1>
     </div>
   )
 }
