@@ -1,5 +1,6 @@
 import React from 'react';
 import AdvanceButton from './AdvanceButton'
+import '../styles/LandingPage.css'
 
 export default function LandingPage(props) {
   // props = updateKey={(e, choice) => this.updateCurrentKey(e, choice)

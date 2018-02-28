@@ -1,5 +1,6 @@
 import React from 'react';
 import AdvanceButton from './AdvanceButton';
+import '../styles/GoodAnswer.css'
 
 
 export default function GoodAnswer(props) {

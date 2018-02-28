@@ -1,5 +1,6 @@
 import React from 'react';
 import AdvanceButton from './AdvanceButton';
+import '../styles/BadAnswer.css'
 
 export default function BadAnswer(props) {
   // props = updateKey={(e, choice) => this.updateCurrentKey(e, choice)

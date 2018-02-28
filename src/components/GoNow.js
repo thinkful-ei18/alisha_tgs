@@ -1,6 +1,6 @@
 import React from 'react';
 import AdvanceButton from './AdvanceButton';
-
+import '../styles/GoNow.css'
 
 export default function GoNow(props) {
   // props = updateKey={(e, choice) => this.updateCurrentKey(e, choice)
