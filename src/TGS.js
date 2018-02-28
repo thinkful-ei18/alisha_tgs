@@ -4,10 +4,10 @@ import './TGS.css';
 const COMPONENTS = {
   one: LandingPage,
   two: QuestionOne,
-  // three: GoNow,
-  // four: QuestionTwo,
-  // five: GoodAnswer,
-  // six: BadAnswer
+  three: GoNow,
+  four: QuestionTwo,
+  five: GoodAnswer,
+  six: BadAnswer
 };
 
 export default class TGS extends Component {
@@ -38,7 +38,7 @@ function LandingPage(props) {
     <div className="TGS">
       <h1>The Greatest Showman</h1>
       <h4>Starring: Hugh Jackman, Michelle Williams, Zac Efron & Zendaya</h4>
-      <button onClick={(e) => props.updateKey(e, 'two')}>Start</button>
+      <AdvanceButton text="Start" onClick={e => props.updateKey(e, 'two')} />
     </div>
   );
 }
@@ -49,84 +49,56 @@ function QuestionOne(props) {
     return (
       <div className="QuestionOne">
         <h1>Have you seen it?</h1>
-        <YesButton />
-        <NoButton />
+        <AdvanceButton text="yes" onClick={e => props.updateKey(e, 'four')} />
+        <AdvanceButton text="no" onClick={e => props.updateKey(e, 'three')} />
       </div>
     )
   }
 
-function YesButton(props) {
+function AdvanceButton(props) {
+  // props= text that goes inside button, onClick cb
 
-  // if(this.state.currentKey === 'two') {
-    return (
-      <span className="button">
-        <button onClick={(e) => props.updateKey(e, 'four')}>yes</button>
-      </span>
-    )
-//   }
-
-//   return (
-//     <span className="button">
-//       <button onClick={(e) => props.updateKey(e, 'five')}>yes</button>
-//     </span>
-//   )  
+ return <button type="button" onClick={()=>props.onClick()}>{props.text}</button>
 }
 
-function NoButton(props) {
+function QuestionTwo(props) {
+  // props = updateKey={(e, choice) => this.updateCurrentKey(e, choice) 
 
-  // if (this.state.currentKey === 'two') {
-    return (
-      <span className="button">
-        <button onClick={(e) => props.updateKey(e, 'three')}>no</button>
-      </span>
-    )
-  // }
-
-  // return (
-  //   <span className="button">
-  //     <button onClick={(e) => props.updateKey(e, 'six')}>yes</button>
-  //   </span>
-  // )  
+  return (
+    <div className="QuestionTwo">
+      <h1>Did you like it?</h1>
+      <AdvanceButton text="yes" onClick={e => props.updateKey(e, 'five')} />
+      <AdvanceButton text="no" onClick={e => props.updateKey(e, 'six')} />
+    </div>
+  )
 }
 
-// function QuestionTwo(props) {
-//   // props = updateKey={(e, choice) => this.updateCurrentKey(e, choice) 
+function GoNow(props) {
+  // props = updateKey={(e, choice) => this.updateCurrentKey(e, choice)
 
-//   return (
-//     <div className="QuestionTwo">
-//       <h1>Did you like it?</h1>
-//       <YesButton />
-//       <NoButton />
-//     </div>
-//   )
-// }
+  return (
+    <div className="GoNow">
+      <h1>Stop what you're doing and go buy a ticket!</h1>
+    </div>
+  )
+}
 
-// function GoNow(props) {
-//   // props = updateKey={(e, choice) => this.updateCurrentKey(e, choice)
+function GoodAnswer(props) {
+  // props = updateKey={(e, choice) => this.updateCurrentKey(e, choice)
 
-//   return (
-//     <div className="GoNow">
-//       <h1>Stop what you're doing and go buy a ticket!</h1>
-//     </div>
-//   )
-// }
+  return (
+    <div className="GoodAnswer">
+      <h1>Let's be friends!!</h1>
+    </div>
+  )
+}
 
-// function GoodAnswer(props) {
-//   // props = updateKey={(e, choice) => this.updateCurrentKey(e, choice)
+function BadAnswer(props) {
+  // props = updateKey={(e, choice) => this.updateCurrentKey(e, choice)
 
-//   return (
-//     <div className="GoodAnswer">
-//       <h1>Let's be friends!!</h1>
-//     </div>
-//   )
-// }
-
-// function BadAnswer(props) {
-//   // props = updateKey={(e, choice) => this.updateCurrentKey(e, choice)
-
-//   return (
-//     <div className="BadAnswer">
-//       <h1>Booooo!!</h1>
-//     </div>
-//   )
-// }
+  return (
+    <div className="BadAnswer">
+      <h1>Booooo!!</h1>
+    </div>
+  )
+}
