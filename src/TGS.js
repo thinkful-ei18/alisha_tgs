@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
 import './TGS.css';
+// import AdvanceButton from './components/AdvanceButton';
+import LandingPage from './components/LandingPage';
+import QuestionOne from './components/QuestionOne';
+import GoNow from './components/GoNow';
+import QuestionTwo from './components/QuestionTwo';
+import GoodAnswer from './components/GoodAnswer';
+import BadAnswer from './components/BadAnswer';
+
 
 const COMPONENTS = {
   one: LandingPage,
@@ -29,76 +37,4 @@ export default class TGS extends Component {
     const Component=COMPONENTS[this.state.currentKey]
     return <Component updateKey={(e, choice) => this.updateCurrentKey(e, choice)}/>
   }
-}
-
-function LandingPage(props) {
-  // props = updateKey={(e, choice) => this.updateCurrentKey(e, choice)
-
-  return (
-    <div className="TGS">
-      <h1>The Greatest Showman</h1>
-      <h4>Starring: Hugh Jackman, Michelle Williams, Zac Efron & Zendaya</h4>
-      <AdvanceButton text="Start" onClick={e => props.updateKey(e, 'two')} />
-    </div>
-  );
-}
-
-function QuestionOne(props) {
-  // props = updateKey={(e, choice) => this.updateCurrentKey(e, choice)
-
-    return (
-      <div className="QuestionOne">
-        <h1>Have you seen it?</h1>
-        <AdvanceButton text="yes" onClick={e => props.updateKey(e, 'four')} />
-        <AdvanceButton text="no" onClick={e => props.updateKey(e, 'three')} />
-      </div>
-    )
-  }
-
-function AdvanceButton(props) {
-  // props= text that goes inside button, onClick cb
-
- return <button type="button" onClick={()=>props.onClick()}>{props.text}</button>
-}
-
-function QuestionTwo(props) {
-  // props = updateKey={(e, choice) => this.updateCurrentKey(e, choice) 
-
-  return (
-    <div className="QuestionTwo">
-      <h1>Did you like it?</h1>
-      <AdvanceButton text="yes" onClick={e => props.updateKey(e, 'five')} />
-      <AdvanceButton text="no" onClick={e => props.updateKey(e, 'six')} />
-    </div>
-  )
-}
-
-function GoNow(props) {
-  // props = updateKey={(e, choice) => this.updateCurrentKey(e, choice)
-
-  return (
-    <div className="GoNow">
-      <h1>Stop what you're doing and go buy a ticket!</h1>
-    </div>
-  )
-}
-
-function GoodAnswer(props) {
-  // props = updateKey={(e, choice) => this.updateCurrentKey(e, choice)
-
-  return (
-    <div className="GoodAnswer">
-      <h1>Let's be friends!!</h1>
-    </div>
-  )
-}
-
-function BadAnswer(props) {
-  // props = updateKey={(e, choice) => this.updateCurrentKey(e, choice)
-
-  return (
-    <div className="BadAnswer">
-      <h1>Booooo!!</h1>
-    </div>
-  )
 }
