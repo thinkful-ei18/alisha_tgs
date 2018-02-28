@@ -1,4 +1,6 @@
 import React from 'react';
+import AdvanceButton from './AdvanceButton';
+
 
 export default function GoodAnswer(props) {
   // props = updateKey={(e, choice) => this.updateCurrentKey(e, choice)
@@ -6,6 +8,7 @@ export default function GoodAnswer(props) {
   return (
     <div className="GoodAnswer">
       <h1>Let's be friends!!</h1>
+      <AdvanceButton text="start over" onClick={e => props.updateKey(e, 'one')} />
     </div>
   )
 }
