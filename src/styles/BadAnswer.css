@@ -1,9 +1,3 @@
 .BadAnswer {
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-h1 {
-  color: red;
+  text-align: center;
 }
