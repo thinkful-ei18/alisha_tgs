@@ -1,6 +1,6 @@
 import React from 'react';
 import AdvanceButton from './AdvanceButton'
-import '../styles/QuestionOne.css'
+import '../styles/LandingPage.css'
 
 export default function QuestionOne(props) {
   // props = updateKey={(e, choice) => this.updateCurrentKey(e, choice)

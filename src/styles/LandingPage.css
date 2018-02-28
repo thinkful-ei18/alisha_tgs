@@ -1,4 +1,20 @@
-.TGS {
-  border: 2px, solid, #0F7CC0;
+.LandingPage, .BadAnswer, .GoNow, .GoodAnswer, .QuestionOne, .QuestionTwo  {
+  border: 8px solid #BC0F59;
   text-align: center;
+  padding-top: 25px;
+  border-radius: 5px;
+  width: 900px;
+  margin: 150px auto 0 auto;
+  /* margin-right: auto; */
 }
+
+h1 {
+  color: #3BADD8;
+  font-size: 60px;
+}
+
+h4 {
+  color: #B9B3AE;
+  font-size: 20px
+}
+
